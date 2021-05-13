@@ -1,0 +1,9 @@
+name: fixedpoint
+version: 0.1.0
+
+authors:
+  - Groogy <groogy@groogy.se>
+
+crystal: 1.0.0
+
+license: MIT
