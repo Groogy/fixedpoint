@@ -5,29 +5,41 @@ module FP
   alias FixedPoint64 = FixedPoint(Int64, 1_000_000)
 
   # Size specific shortcut constructors
-  def fp32(val : Number) : FixedPoint32
+  def self.fp32(val : Number) : FixedPoint32
     FixedPoint32.new val
   end
 
-  def fp64(val : Number) : FixedPoint64
+  def self.fp64(val : Number) : FixedPoint64
     FixedPoint64.new val
   end
 
   # Shortcut to create a fixed point using the size of given argument to determine size of fixed point
-  def fp(val : Int32) : FixedPoint32
+  def self.fp(val : Int32) : FixedPoint32
     fp32 val
   end
 
-  def fp(val : Int64) : FixedPoint64
+  def self.fp(val : Int64) : FixedPoint64
     fp64 val
   end
 
-  def fp(val : Float32) : FixedPoint32
+  def self.fp(val : Float32) : FixedPoint32
     fp32 val
   end
 
-  def fp(val : Float64) : FixedPoint64
+  def self.fp(val : Float64) : FixedPoint64
     fp64 val
+  end
+
+  def fp32(val)
+    FP.fp32 val
+  end
+
+  def fp64(val)
+    FP.fp64 val
+  end
+
+  def fp(val)
+    FP.fp val
   end
 
   # Some helper conversions to fp32 & fp64
