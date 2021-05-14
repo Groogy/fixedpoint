@@ -138,7 +138,10 @@ module FP
     end
 
     def **(other : self) : self
-      self.class.new_from_underlying @underlying ** other.underlying
+      exp = other.underlying / Scale
+      underlying_component = @underlying ** exp
+      scale_component = Scale ** (1 - exp)
+      self.class.new_from_underlying Underlying.new(underlying_component * scale_component)
     end
 
     protected def underlying : Underlying

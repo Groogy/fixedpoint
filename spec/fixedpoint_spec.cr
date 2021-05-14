@@ -54,11 +54,10 @@ describe FixedPoint do
   end
 
   describe "#** with fixed point" do
-    # TODO need to up the internal underlying size before doing the math
-    #it { (fp32(2.5) ** fp32(2)).should eq(6.25) }
-    #it { (fp32(2.5) ** fp32(2.5)).should eq(9.882) }
-    #it { (fp64(2.5) ** fp64(2)).should eq(6.25) }
-    #it { (fp64(2.5) ** fp64(2.5)).should eq(9.882117) }
+    it { (fp32(2.5) ** fp32(2)).should eq(6.25) }
+    it { (fp32(2.5) ** fp32(2.5)).should eq(9.882) }
+    it { (fp64(2.5) ** fp64(2)).should eq(6.25) }
+    it { (fp64(2.5) ** fp64(2.5)).should eq(9.882117) }
   end
 
   describe "#modulo with fixed point" do
