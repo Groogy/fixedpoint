@@ -1,4 +1,5 @@
 require "./impl.cr"
+require "./primitives.cr"
 
 module FP
   alias FixedPoint32 = FixedPoint(Int32, 1_000)

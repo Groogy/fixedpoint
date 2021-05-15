@@ -132,4 +132,26 @@ describe FixedPoint do
     it { fp(1.2).to_i.should eq(1) }
     it { fp(0.65000000000000002).to_i.should eq(0) }
   end
+
+  describe "can do math with floats types" do
+    it { (fp(12.34) + 56.78).should eq(69.12) }
+    it { (12.34 + fp(56.78)).should eq(69.12) }
+    it { (fp(12.34) - 56.78).should eq(-44.44) }
+    it { (12.34 - fp(56.78)).should eq(-44.44) }
+    it { (fp(12.34) * 2.0).should eq(24.68) }
+    it { (12.34 * fp(2.0)).should eq(24.68) }
+    it { (fp(12.34) / 2.0).should eq(6.17) }
+    it { (12.34 / fp(2.0)).should eq(6.17) }
+  end
+
+  describe "can do math with int types" do
+    it { (fp(12.34) + 10).should eq(22.34) }
+    it { (10 + fp(56.78)).should eq(66.78) }
+    it { (fp(12.34) - 10).should eq(2.34) }
+    it { (10 - fp(56.78)).should eq(-46.78) }
+    it { (fp(12.34) * 2).should eq(24.68) }
+    it { (12 * fp(2)).should eq(24.0) }
+    it { (fp(12.34) / 2).should eq(6.17) }
+    it { (12 / fp(2)).should eq(6) }
+  end
 end

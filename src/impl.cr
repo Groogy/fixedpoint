@@ -144,6 +144,30 @@ module FP
       self.class.new_from_underlying Underlying.new(underlying_component * scale_component)
     end
 
+    def +(other : Number) : self
+      self + self.class.new(other)
+    end
+
+    def -(other : Number) : self
+      self - self.class.new(other)
+    end
+
+    def *(other : Number) : self
+      self * self.class.new(other)
+    end
+
+    def /(other : Number) : self
+      self / self.class.new(other)
+    end
+
+    def %(other : Number) : self
+      self % self.class.new(other)
+    end
+
+    def **(other : Number) : self
+      self ** self.class.new(other)
+    end
+
     protected def underlying : Underlying
       @underlying
     end
